@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     DATABASE_HOSTNAME: str = "localhost"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     ALGORITHM: str
+    DATABASE_PORT: int
 
     class Config:
         env_file = '.env'

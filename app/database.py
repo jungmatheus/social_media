@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from .config import settings as s
 
-SQLALCHEMY_DATABASE_URL = f'postgresql://{s.DATABASE_USERNAME}:{s.DATABASE_PASSWORD}@{s.DATABASE_HOSTNAME}/social_media'
+SQLALCHEMY_DATABASE_URL = f'postgresql://{s.DATABASE_USERNAME}:{s.DATABASE_PASSWORD}@{s.DATABASE_HOSTNAME}:{s.DATABASE_PORT}/{s.DATABASE_NAME}'
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
